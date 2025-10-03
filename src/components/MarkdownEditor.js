@@ -4,20 +4,21 @@ const MarkdownEditor = () => {
   const [markdown, setMarkdown] = useState("");
   const [preview, setPreview] = useState("");
 
-  // Update preview whenever markdown changes
   useEffect(() => {
-    setPreview(markdown); // no parser, just mirror the text
+    setPreview(markdown);
   }, [markdown]);
 
   return (
     <div className="app">
-      <div className="textarea">
-        <textarea
-          value={markdown}
-          onChange={(e) => setMarkdown(e.target.value)}
-          placeholder="Type Markdown here..."
-        />
-      </div>
+      {/* textarea must have className="textarea" */}
+      <textarea
+        className="textarea"
+        value={markdown}
+        onChange={(e) => setMarkdown(e.target.value)}
+        placeholder="Type Markdown here..."
+      />
+      
+      {/* preview must have className="preview" */}
       <div className="preview">{preview}</div>
     </div>
   );
