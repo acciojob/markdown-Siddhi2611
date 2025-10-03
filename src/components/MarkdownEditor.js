@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { marked } from "marked";
 
 const MarkdownEditor = () => {
   const [markdown, setMarkdown] = useState("");
@@ -7,7 +6,7 @@ const MarkdownEditor = () => {
 
   // Update preview whenever markdown changes
   useEffect(() => {
-    setPreview(marked(markdown));
+    setPreview(markdown); // no parser, just mirror the text
   }, [markdown]);
 
   return (
@@ -19,13 +18,9 @@ const MarkdownEditor = () => {
           placeholder="Type Markdown here..."
         />
       </div>
-      <div
-        className="preview"
-        dangerouslySetInnerHTML={{ __html: preview }}
-      />
+      <div className="preview">{preview}</div>
     </div>
   );
 };
 
 export default MarkdownEditor;
-
