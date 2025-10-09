@@ -1,24 +1,12 @@
 .app {
   font-family: Arial, sans-serif;
-  text-align: center;
   padding: 20px;
-}
-
-.editor-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.editor-section,
-.preview-section {
-  width: 48%;
-  text-align: left;
 }
 
 .textarea {
   width: 100%;
-  height: 300px;
+  height: 200px;
+  margin-top: 10px;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -26,15 +14,15 @@
 }
 
 .preview {
-  width: 100%;
-  min-height: 300px;
-  border: 1px solid #ccc;
+  margin-top: 20px;
   padding: 10px;
+  min-height: 150px;
+  border: 1px solid #ddd;
   background-color: #fafafa;
-  overflow-y: auto;
 }
 
-.loading {
-  font-style: italic;
-  color: gray;
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
